@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f4f4; color: #333; }
+        .container { width: 70%; margin: 30px auto; padding: 20px; background: #fff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        h2 { text-align: center; margin-bottom: 20px; }
+        .info { display: flex; justify-content: space-between; margin-bottom: 10px; padding: 10px; border-bottom: 1px solid #ddd; }
+        .label { font-weight: bold; color: #555; }
+        .value { font-weight: normal; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>User Information</h2>
+        <div class="info"><span class="label">1. Status:</span><span class="value" id="statusVal"></span></div>
+        <div class="info"><span class="label">2. User ID:</span><span class="value" id="userIdVal"></span></div>
+        <div class="info"><span class="label">3. College Email ID:</span><span class="value" id="collegeEmailVal"></span></div>
+        <div class="info"><span class="label">4. College Roll Number:</span><span class="value" id="rollNumberVal"></span></div>
+        <div class="info"><span class="label">5. Number Array:</span><span class="value" id="numberArrayVal"></span></div>
+        <div class="info"><span class="label">6. Alphabet Array:</span><span class="value" id="alphabetArrayVal"></span></div>
+        <div class="info"><span class="label">7. Highest Lowercase Alphabet:</span><span class="value" id="highestAlphabetVal"></span></div>
+    </div>
+
+    <script>
+        // Data Initialization
+        const userInfo = {
+            status: "Active",
+            userId: "67890",
+            collegeEmail: "student@university.com",
+            rollNumber: "2024XY789",
+            numbers: [5, 15, 25, 35, 45],
+            alphabets: ['x', 'z', 'y', 'v', 'u']
+        };
+
+        // Determine the highest lowercase alphabet using spread syntax and Math.max
+        const highestAlphabet = userInfo.alphabets.sort().reverse()[0];
+
+        // Display Values in HTML
+        document.getElementById('statusVal').textContent = userInfo.status;
+        document.getElementById('userIdVal').textContent = userInfo.userId;
+        document.getElementById('collegeEmailVal').textContent = userInfo.collegeEmail;
+        document.getElementById('rollNumberVal').textContent = userInfo.rollNumber;
+        document.getElementById('numberArrayVal').textContent = [${userInfo.numbers.join(', ')}];
+        document.getElementById('alphabetArrayVal').textContent = [${userInfo.alphabets.join(', ')}];
+        document.getElementById('highestAlphabetVal').textContent = highestAlphabet;
+    </script>
+</body>
+</html>
